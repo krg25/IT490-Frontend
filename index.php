@@ -52,9 +52,16 @@ header, footer {
 <header>
    <h1>Stocks</h1>
 </header>
-
-  <a href = login.php>Login Here</a>
-
+<?php
+session_start();
+if (!isset($_SESSION['user'])){
+  echo ("<a href = login.php>Login Here</a>");
+}
+else
+{
+ echo ("Welcome ".$_SESSION['user']);
+}
+?>
 </div>
 </body>
 </html>

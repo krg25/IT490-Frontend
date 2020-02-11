@@ -72,7 +72,7 @@ header, footer {
 
 <?php
 echo "<div name = \"phpzone\" style=\"border:1px solid gray;overflow:wrap\">";
-
+//if(isset($_SESSION)){echo "hi";}else{echo "false";}
 ini_set('display_errors',1);
 require_once('rabbit/path.inc');
 require_once('rabbit/get_host_info.inc');
@@ -95,7 +95,8 @@ else
   $set = false;
   echo "Please fill in both fields.\n";
 }
-echo "Set: ".$set;
+//echo "Set: ".$set;
+
 if($set){
 $request = array();
 $request['type'] = "Login";
@@ -104,14 +105,28 @@ $request['password'] = $pas;
 
 $response = $client->send_request($request);
 
+switch($response['returnCode']){
+	case 0:
+		echo ("Server error, please retry");
+		break;
+	case 1:
+		echo ("Successful Login");
+		session_start();
+		$_SESSION['user']=$usr;
+		header("location: /");
+		die;
+	case 2:
+		echo ("Incorrect Login");
+		break;
 
-
+}
+/*
 echo "client received response: ".PHP_EOL;
-echo($response['message'].PHP_EOL);
+echo($response['returnCode'].PHP_EOL);
 echo "\n\n";
 
 echo "END".PHP_EOL;
-
+*/
 
 }
 
