@@ -52,7 +52,7 @@ header, footer {
    <h1>Stocks</h1>
 </header>
 
-  <form action="login.php" name="login" id="login" method="post" >
+  <form action="" name="login" id="login" method="post" >
 
   <label for="username"><b><p>Username</p></b></label>
 
@@ -61,7 +61,7 @@ header, footer {
   <label for="password"><b><p>Password</p></b></label>
   <input id="password" name="password" type="password" placeholder="Enter password" required/><br>
   <br>
- <input type="submit" name="submit">
+ <input type="submit" name="submit" id="submit">
  <br>
 <br>
 </form>
@@ -80,25 +80,28 @@ require_once('rabbit/rabbitMQLib.inc');
 
 $client = new rabbitMQClient("rabbit/rabbit.ini","database");
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+//if(isset($_POST['submit'])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-if (isset($_POST["username"]) && isset($_POST["password"]))
+if (isset($_POST['username']) && isset($_POST['password']))
 {
   $set = true;
-  $usr = $_POST["username"];
-  $pas = $_POST["password"];
+  $usr = $_POST['username'];
+  $pas = $_POST['password'];
+	
 }
 else
 {
   $set = false;
-  echo "Invalid arguments, proper usage: login.php <user> <pass>\n";
+  echo "Please fill in both fields.\n";
 }
-
+echo "Set: ".$set;
 if($set){
 $request = array();
 $request['type'] = "Login";
 $request['username'] = $usr;
 $request['password'] = $pas;
+
 $response = $client->send_request($request);
 
 
