@@ -3,45 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
-<style>
-{
-
-
-}
-h1 {
-    color: #443366 ;
-    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
-
-}
-p {
-    color: #443366 ;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-
-}
-body {
-  background: #e6e6e6;
-  text-align: center;
-  }
-
-.content {
-  max-width: 500px;
-  margin: auto;
-  background: white;
-  padding: 10px;
-}
-div.container {
-    width: 100%;
-    border: 1px solid gray;
-}
-
-header, footer {
-    padding: 1em;
-    color: white;
-    background-color: #F08080;
-    clear: left;
-    text-align: center;
-}
-</style>
+<?php include("header.php"); ?>
 </head>
 <body>
 
@@ -120,13 +82,7 @@ switch($response['returnCode']){
 		break;
 
 }
-/*
-echo "client received response: ".PHP_EOL;
-echo($response['returnCode'].PHP_EOL);
-echo "\n\n";
 
-echo "END".PHP_EOL;
-*/
 
 }
 
@@ -134,25 +90,6 @@ echo "END".PHP_EOL;
 }
 echo "</div>".PHP_EOL;
 
-/* This is default code I can't use -krg
-if (!isset($_POST))
-{
-	 $msg = "...enter your credentials. It's not optional";
-	 echo json_encode($msg);
-	 exit(0);
-}
-else
-$request = $_POST;
-$response = "Please leave";
-switch ($request["type"])
-{
-	 case "login":
-	 $response = "login accepted";
-	 break;
-}
-echo json_encode($response);
-exit(0);
-*/
 ?>
 </body>
 </html>
