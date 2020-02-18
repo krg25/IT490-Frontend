@@ -34,7 +34,7 @@
 
 <?php
 echo "<div name = \"phpzone\" style=\"border:1px solid gray;overflow:wrap\">";
-//if(isset($_SESSION)){echo "hi";}else{echo "false";}
+
 ini_set('display_errors',1);
 require_once('rabbit/path.inc');
 require_once('rabbit/get_host_info.inc');
@@ -42,7 +42,7 @@ require_once('rabbit/rabbitMQLib.inc');
 
 $client = new rabbitMQClient("rabbit/rabbit.ini","database");
 
-//if(isset($_POST['submit'])){
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 if (isset($_POST['username']) && isset($_POST['password']))
@@ -55,9 +55,8 @@ if (isset($_POST['username']) && isset($_POST['password']))
 else
 {
   $set = false;
-  echo "Please fill in both fields.\n";
+  echo "Please fill in both fields.".PHP_EOL;
 }
-//echo "Set: ".$set;
 
 if($set){
 $request = array();
@@ -81,13 +80,13 @@ switch($response['returnCode']){
 		echo ("Incorrect Login");
 		break;
 
-}
+}//switch
 
 
-}
+}//if set
 
 
-}
+}//if post
 echo "</div>".PHP_EOL;
 
 ?>

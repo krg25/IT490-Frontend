@@ -17,7 +17,8 @@
 <?php
 session_start();
 if (!isset($_SESSION['user'])){
-  echo ("<a href = login.php>Login Here</a>");
+  echo ("<a href = login.php>Login Here</a><br>");
+  echo ("<a href = register.php>Register Here</a>");
 }
 else
 {
