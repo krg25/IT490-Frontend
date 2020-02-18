@@ -1,6 +1,6 @@
 # IT490-Frontend
 
-To deploy the website to your machine, clone the repository into /var/www/(frontend)/
+To deploy the website to your machine, clone the repository into /var/www/frontend/
 
 Copy the contents of sites-available/ to /etc/apache2/sites-available/
 
