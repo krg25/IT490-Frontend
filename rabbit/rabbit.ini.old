@@ -1,15 +1,3 @@
-[database]
-BROKER_HOST = 25.73.27.242
-BROKER_PORT = 5672
-USER = front
-PASSWORD = 12345
-VHOST = rabbit
-EXCHANGE = master
-QUEUE = dbQ1
-ROUTING_KEY = dbmessage
-EXCHANGE_TYPE = direct
-AUTO_DELETE = false
-
 [frontend]
 BROKER_HOST = 25.73.27.242
 BROKER_PORT = 5672
@@ -19,6 +7,18 @@ VHOST = rabbit
 EXCHANGE = master
 QUEUE = frQ1
 ROUTING_KEY = frmessage
+EXCHANGE_TYPE = direct
+AUTO_DELETE = false
+
+[database]
+BROKER_HOST = 25.73.27.242
+BROKER_PORT = 5672
+USER = front
+PASSWORD = 12345
+VHOST = rabbit
+EXCHANGE = master
+QUEUE = dbQ1
+ROUTING_KEY = dbmessage
 EXCHANGE_TYPE = direct
 AUTO_DELETE = false
 
@@ -34,14 +34,3 @@ ROUTING_KEY = dmmessage
 EXCHANGE_TYPE = direct
 AUTO_DELETE = false
 
-[ErrorLogging]
-BROKER_HOST = 25.73.27.242
-BROKER_PORT = 5672
-USER = front
-PASSWORD = 12345
-VHOST = rabbit
-EXCHANGE = errorlog
-QUEUE = frER
-ROUTING_KEY = *
-EXCHANGE_TYPE = fanout
-AUTO_DELETE = false

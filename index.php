@@ -22,8 +22,10 @@ if (!isset($_SESSION['user'])){
 }
 else
 {
- echo ("Welcome ".$_SESSION['user']);
+ echo ("Welcome ".$_SESSION['user']."<br>");
+ echo ("<a href = logout.php>Log out</a>");
 }
+
 ?>
 </div>
 </body>

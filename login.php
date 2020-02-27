@@ -69,15 +69,18 @@ $response = $client->send_request($request);
 switch($response['returnCode']){
 	case 0:
 		echo ("Server error, please retry");
+		//log("Login","ERROR","Unspecified Server Error");
 		break;
 	case 1:
 		echo ("Successful Login");
+		//log("Login","DEBUG","Successful Login");
 		session_start();
 		$_SESSION['user']=$usr;
 		header("location: /");
 		die;
 	case 2:
 		echo ("Incorrect Login");
+		//log("Login","DEBUG","Unsuccessful Login");
 		break;
 
 }//switch
@@ -87,6 +90,14 @@ switch($response['returnCode']){
 
 
 }//if post
+/*
+function log($function, $type, $message){
+require_once('ErrorLogger.php.inc');
+$log = new ErrorLogger('Frontend','rabbit/rabbit.ini');
+$log->logError($function,$type,$message);
+}
+*/
+
 echo "</div>".PHP_EOL;
 
 ?>
