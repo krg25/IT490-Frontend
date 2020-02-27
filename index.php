@@ -1,9 +1,11 @@
+<!-- index.html landing page -->
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <script type="text/php" src="testRabbitMQClient.php"> </script>
+<link rel="stylesheet" type="text/css" href="style.css">
 <?php include("header.php"); ?>
 </head>
 <body>
@@ -12,19 +14,25 @@
   <div class="container">
 
 <header>
-   <h1>Stocks</h1>
+   <div class="topnav">
+      <!-- navbar -->
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="portfolio.html">My Portfolio</a>
+      <a href="stocks.html">Markets</a>
+      <!-- place to the rightside of navbar   -->
+      <div class="search-container">
+        <a href="login.html">Log In</a>
+        <a href="register.html">Sign Up</a>
+        <form action"/action_page.php">
+          <input type="text" placeholder="Search.." name="search">
+        </form>
+      </div>
+    </div>
+    <h1>Stocks and Stuff</h1>
 </header>
-<?php
-session_start();
-if (!isset($_SESSION['user'])){
-  echo ("<a href = login.php>Login Here</a><br>");
-  echo ("<a href = register.php>Register Here</a>");
-}
-else
-{
- echo ("Welcome ".$_SESSION['user']);
-}
-?>
+<!-- preloaded market data should go here -->
+    
 </div>
 </body>
 </html>
