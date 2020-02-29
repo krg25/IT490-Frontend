@@ -86,10 +86,12 @@ switch($response['returnCode']){
 		break;
 	case 1:
 		echo ("Successful Registration");
-		session_start();
+		$_SESSION['ID']=$response['ID'];
 		$_SESSION['user']=$usr;
+		echo ($_SESSION['ID']);
 		header("location: /");
 		die;
+
 	case 2:
 		echo ("Sum ding wong");
 		break;

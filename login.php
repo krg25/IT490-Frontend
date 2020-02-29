@@ -72,7 +72,7 @@ switch($response['returnCode']){
 		break;
 	case 1:
 		echo ("Successful Login");
-		session_start();
+		$_SESSION['ID']=$response['ID'];
 		$_SESSION['user']=$usr;
 		header("location: /");
 		die;

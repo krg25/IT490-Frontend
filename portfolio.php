@@ -14,24 +14,6 @@
 <header>
     <h1>Stocks</h1>
 </header>
-
-<p>
-
-<?php
-/*
-if (isset($_SESSION['user'])){
-echo $_SESSION['user']." ".$_SESSION['ID'];
-}
-*/
-
-
-?>
-
-
-
-
-
-</p>
 <!-- preloaded market data should go here -->
     
 </div>
