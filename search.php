@@ -32,18 +32,33 @@ switch($response['returnCode']){
 		echo ("Server error, please retry");
 		break;
 	case 1:
-		echo ($response['symbol']);
-		/*echo ("
+		echo ("
 		<header>
-		<h1>".$response['username']."--".$response['id']."</h1></br>
-		<p>".$response['fname']." ".$response['lname']."</p>
-		<p> Date Joined: ".$response['date']."</p>
-		</header>");*/
+		<h1><a href = https://finance.yahoo.com/quote/".$response['symbol'].">".$response['symbol']."</a>, Current Price: $".$response['price']."</h1></br>
+		<header>
+	<table>
+	<tr>
+		<td>Open:</td><td>$".$response['open']."</td>
+	</tr>
+	<tr>
+		<td>High: </td><td>$".$response['high']."</td>
+	</tr>
+	<tr>
+		<td>Low: </td><td>$".$response['low']."</td>
+	</tr>
+	<tr>
+		<td>Previous Close: </td><td>$".$response['prvclose']."</td>
+	</tr>
+	<tr>
+		<td>Volume: </td><td>".$response['volume']."</td>
+	</tr>
+	</table>
+		");
 		break;
 	case 2:
 		echo ("
 		<header>
-		<h1>Stock not found.</h1>
+		<h1>Stock \"".$_GET['search']."\" not found.</h1>
 		</header>
 		");
 		break;
