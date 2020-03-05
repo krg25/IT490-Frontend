@@ -23,6 +23,7 @@ if (isset($_POST["symbol"])){
 $client = new rabbitMQClient("rabbit/rabbit.ini","database");
 
 $request['type'] = "Transaction";
+$request['sub'] = 1;
 $request['user_id'] = $_POST['user_id'];
 $request['symbol'] = $_POST['symbol'];
 $request['price'] = $_POST['price'];

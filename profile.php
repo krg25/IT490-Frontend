@@ -38,6 +38,14 @@ switch($response['returnCode']){
 		<p>".$response['fname']." ".$response['lname']."</p>
 		<p> Date Joined: ".$response['date']."</p>
 		</header>");
+		if($_SESSION['ID'] == $_GET["id"]){
+		echo("
+		<form action=\"usertransactions.php\" name=\"trans\" id=\"trans\" method=\"post\">
+		<input type=\"hidden\" id=\"user_id\" name=\"user_id\" value=".$_SESSION['ID'].">
+		<button id=\"trans\" name=\"trans\" type=\"sumbit\">View Transactions</button>
+		</form>
+		");
+		}
 		break;
 	case 2:
 		echo ("

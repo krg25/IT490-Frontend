@@ -30,16 +30,20 @@ switch($response[0]['returnCode']){
 		echo ("Server error, please retry");
 		break;
 	case 1:
-		/*
-		echo ("
-		<header>
-		<h1>".$response['1']['symbol']."</h1></br>
-		
-		</header>");
-		*/
-echo("<table style=\"width:100%\"><tr><th>Symbol</th><th>Owned</th><th>Initial Price</th><th>Current Price</th><th>Change</th></tr>"); 
+echo("
+<header>
+<h1>".$_SESSION['user']."\tCash Balance: $".money_format("%i",($response[0]['wallet']))."
+</header>
 
+");
+echo("<table style=\"width:100%\"><tr><th align=left>Symbol</th><th>Owned</th><th align=right>Initial Price</th><th align=right>Current Price</th><th align=right>Change</th></tr>"); 
+	$totalinitial = 0;
+	$totalcurrent = 0;
+	$totalchange  = 0;
 		for ($i=1; $i<count($response); $i++){
+		$totalinitial = ($totalinitial + $response[$i]['stock_initial']);
+		//$totalcurrent = $totalcurrent + $response[$i]['stock_current'];
+		//$totalchange = $totalchange + ($response[$i]['stock_current'] - $response[$i]['stock_initial']);
 echo("
 
 	<tr>
