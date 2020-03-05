@@ -32,6 +32,7 @@ switch($response['returnCode']){
 		echo ("Server error, please retry");
 		break;
 	case 1:
+		
 		echo ("
 		<header>
 		<h1><a href = https://finance.yahoo.com/quote/".$response['symbol'].">".$response['symbol']."</a>, Current Price: $".$response['price']."</h1></br>
@@ -51,9 +52,25 @@ switch($response['returnCode']){
 	</tr>
 	<tr>
 		<td>Volume: </td><td>".$response['volume']."</td>
-	</tr>
-	</table>
-		");
+	</tr>");
+if(isset($_SESSION['ID'])){
+	echo("<tr>
+		
+		<form action=\"transaction.php\" name=\"buy\" id=\"buy\" method=\"post\">
+		<td>		
+		<input type=\"hidden\" id=\"user_id\" name=\"user_id\" value=".$_SESSION['ID'].">
+		<input type=\"hidden\" id=\"symbol\" name=\"symbol\" value=".$_GET['search'].">
+		<input type=\"hidden\" id=\"price\" name=\"price\" value=".$response['price'].">
+		<input type=\"number\" id=\"qty\" name=\"qty\" step=\"1\" required>
+		</td>
+		<td>
+		<button type=\"submit\" name=\"asubmit\" id=\"bsubmit\">Buy Stock</button>
+		</td>
+		</form>
+		
+	</tr>");
+}
+		echo("</table>");
 		break;
 	case 2:
 		echo ("
