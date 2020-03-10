@@ -40,10 +40,11 @@ echo("<table style=\"width:100%\"><tr><th align=left>Symbol</th><th>Owned</th><t
 	$totalinitial = 0;
 	$totalcurrent = 0;
 	$totalchange  = 0;
-		for ($i=1; $i<count($response); $i++){
-		$totalinitial = ($totalinitial + $response[$i]['stock_initial']);
-		$totalcurrent = $totalcurrent + $response[$i]['stock_current'];
-		$totalchange = $totalchange + ($response[$i]['stock_current'] - $response[$i]['stock_initial']);
+		
+	for ($i=1; $i<count($response); $i++){
+		$totalinitial += ($response[$i]['stock_owned']*$response[$i]['stock_initial']);
+		$totalcurrent +=($response[$i]['stock_owned']*$response[$i]['stock_current']);
+		$totalchange += ($totalcurrent - $totalinitial);
 echo("
 
 	<tr>
@@ -51,11 +52,18 @@ echo("
 		<td align=center>".$response[$i]['stock_owned']."</td>
 		<td align=right>$".money_format("%i",($response[$i]['stock_owned']*$response[$i]['stock_initial']))."</td>	
 		<td align=right>$".money_format("%i",($response[$i]['stock_owned']*$response[$i]['stock_current']))."</td>
-		<td align=right>".($response[$i]['stock_current']-$response[$i]['stock_initial'])."</td>
+		<td align=right>$".money_format("%i",($response[$i]['stock_current']-$response[$i]['stock_initial']))."</td>
 			
 	</tr>
 
 
+");
+echo("
+		<td>Totals</td>
+		<td align=center></td>
+		<td align=right>$".money_format("%i",$totalinitial)."</td>	
+		<td align=right>$".money_format("%i",$totalcurrent)."</td>	
+		<td align=right>$".money_format("%i",$totalchange)."</td>	
 ");
 
 }
