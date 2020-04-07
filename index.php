@@ -14,7 +14,8 @@
 <header>
     <h1>Stocks</h1>
 </header>
-
+	<a href="https://knowyourmeme.com/photos/1499826-stonks"></a>        
+	
 <p>
 
 <?php
