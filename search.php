@@ -64,7 +64,7 @@ if(isset($_SESSION['ID'])){
 		<input type=\"number\" id=\"qty\" name=\"qty\" step=\"1\" required>
 		</td>
 		<td>
-		<button type=\"submit\" name=\"submit\" id=\"submit\">Buy Stock</button>
+		<button type=\"submit\" name=\"submit\" id=\"submit\">Execute</button>
 		</td>
 		</form>
 		
