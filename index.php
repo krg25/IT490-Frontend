@@ -14,7 +14,10 @@
 <header>
     <h1>Stocks</h1>
 </header>
-	<a href="https://i.kym-cdn.com/photos/images/original/001/499/826/2f0.png"></a>        
+
+<a href="https://i.kym-cdn.com/photos/images/original/001/499/826/2f0.png">
+	<iimg src="stonks" alt="stonks">
+	</a>        
 	
 <p>
 
