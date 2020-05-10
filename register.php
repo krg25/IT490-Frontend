@@ -69,8 +69,6 @@
     </div>
 
 </main>
-	
-	
 <?php
 //user_id, username, password, email first_name last_name date_joined
 
@@ -125,8 +123,8 @@ switch($response['returnCode']){
 		$_SESSION['ID']=$response['ID'];
 		$_SESSION['user']=$usr;
 		echo ($_SESSION['ID']);
-		header("location: /");
-		die;
+		echo "<script type='text/javascript'>window.top.location='/index.php';</script>"; exit;
+		//header("Location: /index.php", true, 301); exit;
 
 	case 2:
 		echo ("Sum ding wong");
