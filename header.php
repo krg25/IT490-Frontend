@@ -36,7 +36,13 @@
 			    <a class=\"nav-link\" href=portfolio.php>My Portfolio</a>
 			<\li>
 			<li class=\"nav-item\">
+			    <a class=\"nav-link\" href=chat/kenchat.php>Chat</a>
+			</li>
+			<li class=\"nav-item\">
 			    <a class=\"nav-link\" href=logout.php>Logout</a>
+			</li>
+			<li class=\"nav-item\">
+			    <a class=\"nav-link\" href=chat/kenchat.php>Chat</a>
 			</li>
            ");
         }
