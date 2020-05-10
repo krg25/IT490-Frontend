@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-header">Register</div>
                     <div class="card-body">
-                        <form action="" method="">
+                         <form name="registration" id="registration" action="" method="post">
                             <div class="form-group row">
                                 <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
                                 <div class="col-md-6">
@@ -56,7 +56,7 @@
                             </div>
 						
 							<div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" name="submit" id="submit" class="btn btn-primary">
                                     Register
                                 </button>
 
@@ -71,36 +71,6 @@
 </main>
 	
 	
-<!--
-<div class="content">
-  <div class="container">
-
-<header>
-   <h1>Stocks</h1>
-</header>
- <form name="registration" id="registration" action="" method="post">
-
-  <label for="Username"><b><p>Username</p></b></label>
-  <input id="username" name="username" type="text" placeholder="Username" required>
-
-  <label for="password"><b><p>Password</p></b></label>
-  <input id="password" name="password" type="password"  placeholder="Password" required/>
-
-<label for="fname"><b><p>First Name</p></b></label>
-  <input id="fname" name="fname" type="text" placeholder="First Name" required>
-
-<label for="lname"><b><p>Last Name</p></b></label>
-  <input id="lname" name="lname" type="text" placeholder="Last Name" required>
-
-    <label for="email"><b><p>Email</p></b></label>
- <input id="email" name="email" type="text" placeholder="Email" name="email" required/> 
-<br> 
- <input type="submit" name="submit" id="submit" >
-
-</form>
-
-</div>
--->
 <?php
 //user_id, username, password, email first_name last_name date_joined
 
