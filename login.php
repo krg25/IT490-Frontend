@@ -21,7 +21,7 @@
                 <div class="card">
                     <div class="card-header">Log In</div>
                     <div class="card-body">
-                        <form action="" method="">
+                        <form action="" name="login" id="login" method="post">
                             <div class="form-group row">
                                 <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
                                 <div class="col-md-6">
@@ -47,7 +47,7 @@
                             </div>
 
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" name="submit" id="submit" class="btn btn-primary">
                                     Log In
                                 </button>
                                 <a href="#" class="btn btn-link">
@@ -64,24 +64,6 @@
 
 </main>	
 	
-<!--
-  <form action="" name="login" id="login" method="post" >
-
-  <label for="username"><b><p>Username</p></b></label>
-
-  <input id="username" name="username" type="text" placeholder="Enter username" required> <br>
-
-  <label for="password"><b><p>Password</p></b></label>
-  <input id="password" name="password" type="password" placeholder="Enter password" required/><br>
-  <br>
- <input type="submit" name="submit" id="submit">
- <br>
-<br>
-</form>
-
-</div>
-</div>
--->
 
 <?php
 echo "<div name = \"phpzone\" style=\"border:1px solid gray;overflow:wrap\">";
