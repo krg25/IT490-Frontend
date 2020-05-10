@@ -54,6 +54,33 @@ if(empty($_POST['chat'])){
 }else{$chat = ($_POST['chat']);}
 
 if (empty($errors)){
+require_once('rabbit/path.inc');
+require_once('rabbit/get_host_info.inc');
+require_once('rabbit/rabbitMQLib.inc');
+
+$client = new rabbitMQClient("rabbit/rabbit.ini","database");
+
+$request = array();
+$request['type'] = "InsertChat";
+$request['username'] = $name;
+$request['content'] = $chat;
+
+$response = $client->send_request($request);
+
+switch($response['returnCode']){
+	case 0:
+		echo ("Server error, please retry");
+		break;
+	case 1:
+		echo ("Chat Sent Successfully");
+		break;
+	case 2:
+		echo ("Input Error");
+		break;
+
+}//switch
+
+
 
 //Construct rabbit message with username, and chat message
 
