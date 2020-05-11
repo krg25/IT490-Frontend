@@ -10,12 +10,12 @@
 </head>
 <body>
 <?php include("header.php"); ?>
-        
-<!-- rss feed -->
+    <!-- rss feed -->
         <div class="feedgrabbr_widget" id="fgid_b53a2c64da5f39d3f5c0ab15a"></div>
             <script>if (typeof (fg_widgets) === "undefined") fg_widgets = new Array(); fg_widgets.push("fgid_b53a2c64da5f39d3f5c0ab15a");</script>
             <script async src="https://www.feedgrabbr.com/widget/fgwidget.js"></script>
-        
-        </div>
+
+	</div>
+
 </body>
 </html>

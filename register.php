@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<?php include("header.php"); ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<?php include("header.php"); ?>	
 
-<div class="content">
-  <div class="container">
+<main class="register-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Register</div>
+                    <div class="card-body">
+                         <form name="registration" id="registration" action="" method="post">
+                            <div class="form-group row">
+                                <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="username" class="form-control" name="username" required autofocus>
+                                </div>
+                            </div>
 
-<header>
-   <h1>Stocks</h1>
-</header>
- <form name="registration" id="registration" action="" method="post">
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" id="password" class="form-control" name="password" required>
+                                </div>
+                            </div>
 
-  <label for="Username"><b><p>Username</p></b></label>
-  <input id="username" name="username" type="text" placeholder="Username" required>
+							<div class="form-group row">
+                                <label for="fname" class="col-md-4 col-form-label text-md-right">First Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="fname" class="form-control" name="fname" required autofocus>
+                                </div>
+                            </div>
 
-  <label for="password"><b><p>Password</p></b></label>
-  <input id="password" name="password" type="password"  placeholder="Password" required/>
+							<div class="form-group row">
+                                <label for="lname" class="col-md-4 col-form-label text-md-right">Last Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="lname" class="form-control" name="lname" required autofocus>
+                                </div>
+                            </div>
 
-<label for="fname"><b><p>First Name</p></b></label>
-  <input id="fname" name="fname" type="text" placeholder="First Name" required>
+							<div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="email" class="form-control" name="email" required autofocus>
+                                </div>
+                            </div>
+						
+							<div class="col-md-6 offset-md-4">
+                                <button type="submit" name="submit" id="submit" class="btn btn-primary">
+                                    Register
+                                </button>
 
-<label for="lname"><b><p>Last Name</p></b></label>
-  <input id="lname" name="lname" type="text" placeholder="Last Name" required>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
-    <label for="email"><b><p>Email</p></b></label>
- <input id="email" name="email" type="text" placeholder="Email" name="email" required/> 
-<br> 
- <input type="submit" name="submit" id="submit" >
-
-</form>
-
-</div>
+</main>
+	
+	
 <?php
 //user_id, username, password, email first_name last_name date_joined
 
