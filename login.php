@@ -107,8 +107,7 @@ switch($response['returnCode']){
 		echo ("Successful Login");
 		$_SESSION['ID']=$response['ID'];
 		$_SESSION['user']=$usr;
-		header("location: /");
-		die;
+		echo "<script type='text/javascript'>window.top.location='/index.php';</script>"; exit;
 	case 2:
 		echo ("Incorrect Login");
 		break;

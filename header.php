@@ -31,10 +31,13 @@
 		echo("
 			<li class=\"nav-item\">       
 			    <a class=\"nav-link\" href=profile.php?id=".$_SESSION['ID'].">Profile</a>
-			<\li>
+			</li>
 			<li class=\"nav-item\">
 			    <a class=\"nav-link\" href=portfolio.php>My Portfolio</a>
-			<\li>
+			</li>
+			<li class=\"nav-item\">
+			    <a class=\"nav-link\" href=kenchat.php>Chat</a>
+			</li>
 			<li class=\"nav-item\">
 			    <a class=\"nav-link\" href=logout.php>Logout</a>
 			</li>
