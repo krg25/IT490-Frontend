@@ -45,7 +45,7 @@ echo "<div name = \"phpzone\" style=\"border:1px solid gray;max-width:256px;over
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 $errors = array();
-if(isset($_SESSION['user'])){
+if(!isset($_SESSION['user'])){
 	$errors[] = 'No name';
 }else{$name = $_SESSION['user'];}
 
@@ -67,10 +67,7 @@ $request['content'] = $chat;
 
 $response = $client->send_request($request);
 
-switch($response['returnCode']){
-	case 0:
-		echo ("Server error, please retry");
-		break;
+switch($response['0']){
 	case 1:
 		echo ("Chat Sent Successfully");
 		break;
@@ -81,34 +78,6 @@ switch($response['returnCode']){
 }//switch
 
 
-
-//Construct rabbit message with username, and chat message
-
-//Move this all to database
-/*
-	require('mysqli_connect.php');
-	$timestamp = date('Y-m-d G:i:s'); //timestamp for the table
-
-	$name = mysqli_real_escape_string($dbc, $name); //this function allows for the safe entry of special characters to the table
-	$chat = mysqli_real_escape_string($dbc, $chat);
-
-	$q = "SELECT username FROM users_table WHERE (username='$name')"; //check for the user in user table
-	$r = @mysqli_query($dbc, $q);
-	$num = @mysqli_num_rows($r);
-
-//KRG490 This is basically cool, chat_log needs to be created	
-
-	if($num==1){ //user is verified, enter post into chat log
-		$q = "INSERT INTO chat_log (username, content, timestamp) VALUES ('$name', '$chat', '$timestamp')";
-		$r = @mysqli_query($dbc, $q);
-		if (empty(mysqli_error($dbc))){
-			echo "post submitted...<br/>";
-		}else{
-			echo "error: " . mysqli_error($dbc);
-		}
-	}else{echo "login failed.";}
-	mysqli_close($dbc); //VERY important!
-*/
 }//close if empty errors
 	else{foreach($errors as $msg){echo $msg;}}
 
